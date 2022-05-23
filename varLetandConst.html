@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+
+        var a = 20;
+        let b = 30;
+        const c = 40;
+        document.write(a + "<br />");
+        document.write(b + "<br />");
+        document.write(c + "<br />");
+
+        function myvar (){
+            var d = 100;
+            if (true){
+                var d = 50;
+              document.write(d + " local var call" + "<br />");
+            }
+            document.write(d + " this is func scope" + "<br />");
+        }
+        myvar ();
+
+
+        function mylet (){
+            let e = 100;
+            if (true){
+                let e = 50;
+              document.write(e + " let call block scope" + "<br />");
+            }
+            document.write(e + " let call out of block scope" + "<br />");
+        }
+        mylet ();
+
+        for(let f=0; f<5; f++)
+        {
+            document.write(f + "<br />");
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+
+        for (var x = 0; x < 3; x++) {
+            document.write(x + "<br />" + "outer loop");
+            for (var y = 0; y < 5; y++) {
+                document.write(y + "<br />" + "inner loop");
+            }
+        }
+
+        document.write("<br />");
+        document.write("<br />");
+
+        for (var a = 1; a <= 100; a = a + 10) {
+            for (var b = a; b < a + 10; b++) {
+                document.write(b + "");
+            }
+            document.write("<br />");
+        }
+
+
+    </script>
+</body>
+
+</html>

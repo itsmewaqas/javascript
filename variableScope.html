@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+
+        var x = "i am global veriable";
+
+        function myFunc() {
+            document.write(x + "<br />"); /*call inside*/
+        }
+
+        myFunc();
+        document.write(x + "<br />");/*call outside*/
+
+        if(true){
+            document.write(x + "<br />");/*call inside block*/ 
+        }
+
+
+
+        function myProblamFunc() {
+            var j = "i am local veriable";
+            document.write(j + "<br />"); 
+        }
+        myProblamFunc();
+
+
+    </script>
+</body>
+
+</html>

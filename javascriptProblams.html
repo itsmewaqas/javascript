@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        var getMarray = [
+            [4, 5, 1, 3],
+            [13, 27, 18, 26],
+            [32, 35, 37, 39],
+            [1000, 1001, 857, 1]
+        ];
+        var getMinArrayVal = getMarray.map(item => Math.min(...item));
+        console.log('get min !',getMinArrayVal);
+
+
+        //Done 
+        var arr4 = [11, 12, 13, 14, 15];
+        var arr5 = [16, 17, 11, 12, 20];
+        let getMArr1 = [];
+        var result1 = [...arr4, ...arr5];
+        for (let i = 0; i < result1.length; i++) {
+            getMArr1.push = Math.min(...result1);
+        }
+        console.log(getMArr1);
+
+
+        //var arr = [[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]];
+
+        // var ar001 = [1, 2, 3, 4, 5, 6];
+        // var ar002 = [7, 8, 9, 10, 1, 12];
+        // var ar003 = [13, 14, 5, 2, 17, 0];
+        // var getArrData = [];
+        // var meargall = [...ar001, ...ar002, ...ar003];
+
+
+        // let sortedArr = meargall.sort((a, b) => { return a - b });
+
+        // getArrData.push = Math.min(...meargall);
+
+        // console.log('get min number',getArrData);  //[1,1,0]
+
+
+
+
+
+
+
+
+
+
+
+
+        // Done soterd array
+        var arrrr1 = [5, 1, 9, 5, 7];
+        let res = arrrr1.sort();
+        console.log(res);
+
+
+        //Done I find matching values in two arrays
+        var arr1 = [11, 12, 13, 14, 15];
+        var arr2 = [16, 17, 11, 12, 20];
+        let getMArr = [];
+        getMArr.push = arr1.filter(i => arr2.includes(i));
+        console.log(getMArr);
+
+        // example 2
+
+        let arrr1 = ['a', 'b', 'c', 'd'];
+        let arrr2 = ['b', 'd'];
+        let commonArray = [];
+        arrr1.forEach(x => {
+            if (arrr2.indexOf(x) != -1) {
+                commonArray.push(x);
+            }
+        });
+        console.log(commonArray);
+
+
+
+        //Done Get min number from array
+        var varr3 = [10, 15, 18, 19, 66];
+        let getMinnumber = [];
+        getMinnumber.push = Math.min(...varr3);
+        console.log(getMinnumber);
+
+
+
+        //Done get tow array index sum
+        var varr1 = [1, 2, 3, 4];
+        var varr2 = [5, 6, 7, 8];
+        var sum = [];
+        for (var i = 0; i < varr1.length; i++) {
+            sum.push(varr1[i] + varr2[i]);
+        }
+        console.log(sum);
+
+
+
+        //Done get even numbe & odd number
+        function checkEvenOdd(x) {
+            if (x % 2 == 0) {
+                console.log('even number', x);
+            }
+            else {
+                console.log('odd number', x);
+            }
+        }
+        checkEvenOdd(3);
+
+
+
+        //Done get modulus
+        function modulus(x, y) {
+            return x % y;
+        }
+        console.log(modulus(50, 70));
+
+
+        // var y = "muhammad,waqas,muhammad"
+        // y = Array.from(new Set(y.split(','))).toString();
+        // console.log(y);
+
+
+
+        //Done  remove duplicate chars form string
+        function rdc(str) {
+            var result = '';
+            for (var i = 0; i < str.length; i++) {
+                if (result.indexOf(str[i]) < 0) {
+                    result += str[i];
+                }
+            }
+            return result;
+        }
+
+        console.log(
+            rdc('muhammad'),
+            rdc('waqas')
+        );
+
+
+        // What does set () do in JavaScript?
+        // The Set object lets you store unique values of any type, whether primitive values or object references
+        // Dene multipal arrays merge with sort and remove duplicates
+        var finalARR = [];
+        var arrData1 = [1, 2, 3, 4, 5, 6];
+        var arrData2 = [1, 2, 3, 4, 5, 6, 7, 8];
+        var arrData3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var arrMr = [...arrData1, ...arrData2, ...arrData3];
+        var getMerArray = new Set(arrMr);
+        arrMr = Array.from(getMerArray);
+        console.log('log soterd array', arrMr);
+
+        finalARR.push(arrMr);
+        console.log('push soterd array put new array', finalARR);
+
+    </script>
+</body>
+
+</html>

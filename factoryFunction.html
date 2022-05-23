@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+
+        
+        function Mobile(model, price) {
+            return {
+                model: model,
+                price: price,
+                warranty: function (war) {
+                    return war;
+                }
+            }
+        }
+
+        var samsung = Mobile("S8", " 50000Rs ");
+        var nokia = Mobile("A5", " 35000Rs ");
+        var apple = Mobile("Iphone12Pro", " 245000Rs ");
+
+        document.write(samsung.model + samsung.price + samsung.warranty("5 Years") + "<br />");
+        document.write(nokia.model + nokia.price + nokia.warranty("3 Years") + "<br />");
+        document.write(apple.model + apple.price + apple.warranty("6 Years") + "<br />");
+
+
+
+
+
+    </script>
+</body>
+
+</html>

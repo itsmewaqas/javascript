@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            display: block;
+            margin: 10px 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            line-height: 14px;
+        }
+
+        .chkBoxActive {
+            border: red solid 2px;
+        }
+
+        .chkBoxRemove {
+            border: #ccc solid 2px;
+        }
+        
+        ul{
+            list-style: none;
+        }
+        ul li{
+            display: block;
+            color: #666;
+        }
+        ul li a{
+            text-decoration: none;
+            color: #000;
+        }
+        ul li.active a{
+            color:green;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label class="chkBoxRemove"><input type="checkbox" class="getVal" value="Branding &amp; Visual Identity">Branding &amp; VisualIdentity</label>
+        <label class="chkBoxRemove"><input type="checkbox" class="getVal" value="UI UX Design">UI UXDesign</label>
+        <label class="chkBoxRemove"><input type="checkbox" class="getVal" value="Mobile App">MobileApp</label>
+        <label class="chkBoxRemove"><input type="checkbox" class="getVal" value="Website Design &amp; Development">Website Design &amp; Development</label>
+        <label class="chkBoxRemove"><input type="checkbox" class="getVal" value="CRM, CMS, Web Apps">CRM, CMS, WebApps</label>
+        <label class="chkBoxRemove"><input type="checkbox" class="getVal" value="Design Audit Consultancy">Design Audit Consultancy</label>
+        <label class="chkBoxRemove"><input type="checkbox" class="getVal" value="Strategy &amp; Design">Strategy &amp;Design</label>
+        <label class="chkBoxRemove"><input type="checkbox" class="getVal" value="Illustrations (Vectorized, 3D &amp; more)">Illustrations (Vectorized, 3D &amp; more)</label>
+        <label class="chkBoxRemove"><input type="checkbox" class="getVal" value="Animation &amp; Motion Design">Animation &amp;Motion Design</label>
+        <label class="chkBoxRemove"><input type="checkbox" class="getVal" value="E-commerce &amp; Shopify">E-commerce &amp;Shopify</label>
+       
+        <button class="" onclick="getValFunc()">Get</button>
+        <div id="dataGet"></div>
+
+        <div>
+            <ul class="ulList">
+                <li><a href="javascript:;">Services 1</a></li>
+                <li><a href="javascript:;">Services 2</a></li>
+                <li><a href="javascript:;">Services 3</a></li>
+                <li><a href="javascript:;">Services 4</a></li>
+                <li><a href="javascript:;">Services 5</a></li>
+                <li><a href="javascript:;">Services 6</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+
+
+
+ 
+        //list item active
+        var ulLiActive = document.querySelectorAll(".ulList li a");
+        for (var i = 0, length = ulLiActive.length; i < length; i++) {
+            ulLiActive[i].onclick = function() {
+            var b = document.querySelector(".ulList li.active");
+            if (b) b.classList.remove("active");
+            this.parentNode.classList.add('active');
+        };
+        }
+
+
+        //multipal list item active
+        // var labelsActive = document.querySelectorAll(".chkBoxRemove");
+        var labelsActive = document.querySelectorAll("label");
+        for (let i = 0; i < labelsActive.length; i++) { 
+            labelsActive[i].onchange = function () { 
+                if (labelsActive[i].classList.contains('chkBoxRemove')) {
+                    labelsActive[i].classList.remove('chkBoxRemove')
+                    labelsActive[i].classList.add('chkBoxActive')
+                } else {
+                    labelsActive[i].classList.add('chkBoxRemove')
+                    labelsActive[i].classList.remove('chkBoxActive')
+                }
+            }
+        } 
+        console.log(labelsActive);    
+      
+
+            
+        // labelsActive[i].onclick = function () { 
+        // labelsActive[i].classList.contains("chkBoxActive");
+        //}
+ 
+        
+         //checkbox value select in log
+        function getValFunc() {
+            var getCheckedVal = [];
+            var checkBoxesCount = document.getElementsByClassName("getVal");
+            for (var i = 0; i < checkBoxesCount.length; i++) {
+                if (checkBoxesCount[i].checked) {
+                    getCheckedVal.push(checkBoxesCount[i].value);
+                }
+            }
+            console.log(getCheckedVal);
+
+            var dataSetInHTML = getCheckedVal.toString().replace(/,/g, "   ");
+            document.getElementById('dataGet').innerHTML = dataSetInHTML;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <script>
+        var x = 10;
+        function show() {
+            var y = 15;
+            document.write(y + "<br />");
+            document.write(x + "<br />");
+        }
+        show();
+
+        function outerFunc() {
+            var q = 15;
+            document.write(q + "<br />");
+            function innerFunc() {
+                var m = 10;
+                document.write(m + "<br />");
+                document.write(q + " " + 'this is call parent var');
+            }
+            innerFunc();
+            document.write("<br />" + q + " " + 'this is call parent var secTime');
+        }
+        outerFunc();
+
+    </script>
+</body>
+</html>

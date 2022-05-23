@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            display: block;
+            margin: 10px 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            line-height: 14px;
+        }
+
+        .chkBoxActive {
+            border: red solid 2px;
+        }
+
+        .chkBoxRemove {
+            border: #ccc solid 2px;
+        }
+
+        .selLeb {
+            float: left;
+            min-width: 75px;
+            margin: 0px 10px 10px 0px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form onsubmit="return false;" method="post" action="">
+            <div style="clear: both;display: block;overflow: auto;">
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="selIndus" name="chkArrayUpdate[]"
+                        value="Branding &amp; Visual Identity">Branding &amp; VisualIdentity</label>
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="selIndus" name="chkArrayUpdate[]" value="UI UX Design">UI
+                    UXDesign</label>
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="selIndus" name="chkArrayUpdate[]"
+                        value="Mobile App">MobileApp</label>
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="selIndus" name="chkArrayUpdate[]"
+                        value="Website Design &amp; Development">Website Design &amp; Development</label>
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="selIndus" name="chkArrayUpdate[]" value="CRM, CMS, Web Apps">CRM,
+                    CMS,
+                    WebApps</label>
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="selIndus" name="chkArrayUpdate[]"
+                        value="Design Audit Consultancy">Design Audit Consultancy</label>
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="selIndus" name="chkArrayUpdate[]"
+                        value="Strategy &amp; Design">Strategy
+                    &amp;Design</label>
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="selIndus" name="chkArrayUpdate[]"
+                        value="Illustrations (Vectorized, 3D &amp; more)">Illustrations (Vectorized, 3D &amp;
+                    more)</label>
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="selIndus" name="chkArrayUpdate[]"
+                        value="Animation &amp; Motion Design">Animation &amp;Motion Design</label>
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="selIndus" name="chkArrayUpdate[]"
+                        value="E-commerce &amp; Shopify">E-commerce &amp;Shopify</label>
+            </div>
+            <div id="indErr" style="color: red;"></div>
+            <label for="">Your Name</label>
+            <input type="text" id="uName" value="" />
+            <div id="nameErr" style="color: red;"></div>
+            <label for="">Your Email</label>
+            <input type="text" id="uEmail" value="" />
+            <div id="emailErr" style="color: red;"></div>
+            <label for="">Cell</label>
+            <input type="text" id="uCell" value="" />
+            <div id="cellErr" style="color: red;"></div>
+            <label for="">Company</label>
+            <input type="text" id="uCompany" value="" />
+            <div id="comErr" style="color: red;"></div>
+            <label for="">Comments</label>
+            <textarea id="uComments" rows="5" cols="20" value=""></textarea>
+            <div id="commErr" style="color: red;"></div>
+            <br />
+            <input type="submit" onclick="myFunction()" value="Submit">
+        </form>
+    </div>
+    <script>
+
+        // var labelsActive = document.querySelectorAll(".chkBoxRemove");
+        var labelsActive = document.querySelectorAll("label");
+        for (let i = 0; i < labelsActive.length; i++) {
+            labelsActive[i].onchange = function () {
+                if (labelsActive[i].classList.contains('chkBoxRemove')) {
+                    labelsActive[i].classList.remove('chkBoxRemove')
+                    labelsActive[i].classList.add('chkBoxActive')
+                } else {
+                    labelsActive[i].classList.add('chkBoxRemove')
+                    labelsActive[i].classList.remove('chkBoxActive')
+                }
+            }
+        }
+
+        function myFunction(uName, uEmail, uCell, uCompany, uComments) {
+
+            var uName = document.getElementById("uName").value;
+            var uEmail = document.getElementById("uEmail").value;
+            var uCell = document.getElementById("uCell").value;
+            var uCompany = document.getElementById("uCompany").value;
+            var uComments = document.getElementById("uComments").value;
+
+            if (uName == undefined || uName == "" || uName.length <= 5) {
+                let nameErr = document.getElementById("nameErr").innerHTML = "enter valid name above 5 character";
+            }
+            else {
+                let nameErr = document.getElementById("nameErr").innerHTML = " ";
+            }
+
+            var emailRgx = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if (uEmail == undefined || uEmail == "" || !emailRgx.test(uEmail)) {
+                let emailErr = document.getElementById("emailErr").innerHTML = "enter valid email address";
+            }
+
+            else {
+                let emailErr = document.getElementById("emailErr").innerHTML = " ";
+            }
+
+            var cellRgx = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+            if (uCell == undefined || uCell == "" || (cellRgx.test(uCell) == false)) {
+                let cellErr = document.getElementById("cellErr").innerHTML = "enter valid cell number";
+            }
+            else {
+                let cellErr = document.getElementById("cellErr").innerHTML = " ";
+            }
+
+
+            if (uCompany == undefined || uCompany == "" || uCompany.length <= 5) {
+                let comErr = document.getElementById("comErr").innerHTML = "enter valid company name";
+            }
+
+            else {
+                let comErr = document.getElementById("comErr").innerHTML = " ";
+            }
+
+            if (uComments == undefined || uComments == "" || uComments.length <= 8) {
+                let commErr = document.getElementById("commErr").innerHTML = "enter comments";
+            }
+
+            else {
+                let commErr = document.getElementById("commErr").innerHTML = " ";
+            }
+
+            var getIndustries = [];
+            var selectIndustries = document.getElementsByClassName("selIndus");
+            for (var i = 0; i < selectIndustries.length; i++) {
+                if (selectIndustries[i].checked) {
+                    getIndustries.push(selectIndustries[i].value);
+                }
+            }
+            if (getIndustries.length == 0) {
+                indErr = document.getElementById("indErr").innerHTML = "please select Industry";
+            }
+            else {
+                indErr = document.getElementById("indErr").innerHTML = "";
+            }
+
+            if (uName != ''
+                && uEmail != ''
+                && uCell != ''
+                && uCompany != ''
+                && uComments != ''
+                && getIndustries != '') {
+                var uName = uName;
+                var uEmail = uEmail;
+                var uCell = uCell;
+                var uCompany = uCompany;
+                var uComments = uComments;
+                var getIndustries = getIndustries;
+
+                console.log('get user details...',
+                    [uName,
+                        uEmail,
+                        uCell,
+                        uCompany,
+                        uComments,
+                        getIndustries]);
+
+                console.log('thanks');
+            }
+            else {
+                return false
+            }
+        }
+
+    </script>
+</body>
+</html>

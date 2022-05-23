@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <script>
+
+        //this example 1
+        var obj1 = {
+            firstName: "muhammad",
+            lastName: "waqas",
+            getFullname: function () {
+                console.log(obj1);
+                console.log(this.firstName + " " + this.lastName);
+            }
+        }
+        obj1.getFullname();
+
+
+        //this example 2
+        var obj2 = {
+            fName: "ali",
+            lName: "khan",
+            fun1: function () {
+                console.log(obj2);
+                console.log(this.fName + " " + this.lName);
+            },
+            address: {
+                houseNo: "A852 Block 5",
+                streetNo: "11",
+                city: "karachi",
+                country: "pakistan",
+                getAddress: function () {
+                    console.log(this.houseNo + " " + this.streetNo + " " + this.city + " " + this.country);
+                }
+            }
+        }
+        obj2.fun1();
+        obj2.address.getAddress();
+
+        //this example 3 with Constructor function
+
+        function func2(userNmme, password) {
+            this.userNmme = userNmme;
+            this.password = password;
+            this.getUserInfo = function () {
+                console.log(this.userNmme + " " + this.password);
+            }
+        }
+        let getUser = new func2("zeeshan","akhter");
+        console.log(getUser);
+        getUser.getUserInfo();
+
+        let getUser2 = new func2("alber","khan");
+        console.log(getUser2);
+        getUser2.getUserInfo();
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

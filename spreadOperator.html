@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+
+        var a = [10, 20, 30, 40];
+        var b = [...a, 50, 60, 70, 80];
+        console.warn(a);
+        console.warn(b);
+        document.write("<br />");
+
+        var c = [10, 20, 30, 40];
+        var d = [50, 60, 70, 80];
+        c[0] = 100;
+        d[0] = 500;
+        var e = [...c, ...d];
+        console.warn(c);
+        console.warn(d);
+        console.warn(e);
+        document.write("<br />");
+
+        var m = { courseName: "javascript", teacherName: "ali khan", };
+        var n = { ...m, duration: "6 Months" };
+        n.courseName = "php";
+        console.log(m);
+        console.log(n);
+
+
+    </script>
+</body>
+
+</html>

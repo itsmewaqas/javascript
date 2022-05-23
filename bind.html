@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+
+        let myobj1 = {
+            name: 'waqas',
+            func1: function () {
+                console.log(this.name);
+            }
+        }
+        myobj1.func1();
+
+        /*///////////////////////////*/
+
+        let myobj2 = {
+            name: 'ali',
+            func2: function () {
+                console.log(this.name);
+            }
+        }
+        myobj2.func2.call({ name: 'akber' });
+
+        /*///////////////////////////*/
+
+        let myobj3 = {
+            name: 'waseem',
+            func3: function () {
+                console.log(this.name);
+            }
+        }
+        var getName = myobj3.func3.bind({ name: 'khan' });
+        getName();
+
+    </script>
+</body>
+
+</html>

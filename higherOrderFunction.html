@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <script>
+
+        function add(a, b) {
+            return a + b;
+        }
+
+        function power(a, b) {
+            return Math.pow(a, b);
+        }
+
+        let addition = function (a, b) {
+            return a + b;
+        }
+
+        console.log(addition(5, 7));
+        addition.xyz = "waqas";
+        console.log(addition.xyz);
+
+
+        function operation(a, b, func) {
+            let result = func(a, b);
+            console.log(result);
+        }
+        operation(5, 6, add);
+        operation(2, 3, power);
+
+
+
+
+
+
+
+
+
+
+        
+        function Employee(name, age, depatment) {
+            this.name = name;
+            this.age = age;
+            this.depatment = depatment;
+
+        }
+
+        let employees = [
+            new Employee("john", 22, "core"),
+            new Employee("martin", 21, "devops"),
+            new Employee("jason", 22, "core"),
+            new Employee("jim", 27, "admin"),
+            new Employee("john", 22, "admin"),
+        ];
+
+        function filterbyage(emps, age) {
+            let result = [];
+            for (let i = 0; i < emps.length; i++) {
+                if (emps[i].age == age) {
+                    result.push(emps[i]);
+                }
+            }
+            return result;
+        }
+
+        console.log(filterbyage(employees, 22));
+
+
+        function filter(emps, fn) {
+            let result = [];
+            for (let i = 0; i < emps.length; i++) {
+                if (fn(emps[i])) {
+                    result.push(emps[i]);
+                }
+            }
+            return result;
+        }
+        console.log(filter(employees, function (emps) {
+            return emps.age == 22;
+        }));
+
+
+
+
+
+    </script>
+</body>
+
+</html>

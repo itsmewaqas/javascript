@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+
+        let data = new Promise((success, failure) => {
+            let result = 1;
+            if (result === 1) {
+                success('success');
+            }
+            else {
+                failure('failure');
+            }
+        })
+
+        let data2 = new Promise((success, failure) => {
+            let result = 10;
+            if (result === 10) {
+                success('success2');
+            }
+            else {
+                failure('failure2');
+            }
+        })
+
+        data.then((response) => {
+            console.log('the responce is...', response);
+            return data2;
+        }).then((response) => {
+            console.log('the responce is...', response);
+        })
+            .catch((response) => {
+                console.log('the responce is...', response);
+            })
+
+        // Promise.all([data, data2]).then((responseArray) => {
+        //     console.log('the array response is...', responseArray);
+        // })
+        // .catch((response) => {
+        //     console.log('the array error is...', response);
+        // })
+
+        // Promise.race([data, data2]).then((responseArray) => {
+        //     console.log('the array response is...', responseArray);
+        // })
+        //     .catch((response) => {
+        //         console.log('the array error is...', response);
+        //     })
+
+        // Promise.allSettled([data, data2]).then((responseArray) => {
+        // console.log('the array response is...', responseArray);
+        // })
+        // .catch((response) => {
+        // console.log('the array error is...', response);
+        // })
+
+
+        // function getPromics(params) {
+        //     return new Promise((success, failure) => {
+        //         let matchStatus = 20;
+        //         if (matchStatus === 20) {
+        //             success('success3');
+        //         }
+        //         else {
+        //             failure('failure3');
+        //         }
+        //     })
+        // }
+
+        // function getPromics2(params) {
+        //     if (params.id = 1) {
+        //         return new Promise((success, failure) => {
+        //             let matchStatus2 = 20;
+        //             if (matchStatus2 === 20) {
+        //                 success('success');
+        //             }
+        //             else {
+        //                 failure('failure');
+        //             }
+        //         })
+        //     }
+        //     else {
+        //         return Promise.failure();
+        //     }
+        // }
+
+    </script>
+</body>
+
+</html>

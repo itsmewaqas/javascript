@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <a href="www.fb.com" target="_blank" id="myClick">Click</a>
+    <script>
+
+        function stopLinking(e) {
+            e.preventDefault();
+        }
+
+        var stl = document.getElementById("myClick");
+        stl.addEventListener("click",stopLinking, false);
+    </script>
+</body>
+
+</html>

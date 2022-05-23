@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+
+        // basic anonymous function
+
+        var x = function () {
+            document.write("this is anonymous function");
+        };
+        x();
+        document.write("<br />");
+
+        //anonymous function with parameter
+
+        var y = function (a, b) {
+            return a + b;
+        };
+        document.write(y(10, 20));
+        document.write("<br />");
+
+        //returning anonymous function
+
+        function afFunc(u) {
+            return function (m) {
+                return u + m;
+            }
+        };
+        var callAF = (afFunc(10));
+        document.write(callAF(25));
+        document.write("<br />");
+
+        //Passing Anonymous Function as Argument
+
+        function pafa(myFun) {
+            return myFun();
+        }
+        document.write(pafa(
+            function () {
+                return "Passing Anonymous Function as Argument";
+            }
+        ));
+        document.write("<br />");
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

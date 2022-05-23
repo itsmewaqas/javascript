@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+  <script>
+
+    var myfun = function () {
+      document.write("call function expression");
+    }
+    myfun();
+
+
+    function sum() {
+      let total = 0;
+      for (let i = 0; i < arguments.length; i++) {
+        total = total + arguments[i];
+      }
+      console.log(total);
+    }
+
+    sum(1, 2, 3);
+    sum(4, 5, 6, 7);
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .selectItem {
+            border: 1px solid black;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <button onclick="myFunc1()">Click Me</button>
+    <p id="myName">test</p>
+
+
+
+    <ul>
+        <li class="selectItem">Ali</li>
+        <li class="selectItem">Junaid</li>
+        <li class="selectItem">waqas</li>
+        <li class="selectItem">zeeshan</li>
+        <li class="selectItem">waseem</li>
+        <li class="selectItem">alber</li>
+    </ul>
+    <p id="reslut"></p>
+
+
+
+    <script>
+
+        function myFunc1() {
+            var abc = document.getElementById("myName");
+            document.getElementById("myName").innerHTML = "click me";
+        }
+
+
+        var item = document.getElementsByClassName("selectItem");
+        var reslut = document.getElementById("reslut");
+
+        for (let i = 0; i < item.length; i++) {
+            item[i].onclick = function () {
+                item[i].style.backgroundColor = "red";
+                reslut.innerHTML = this.innerHTML;
+                console.log(this.innerHTML);
+            }
+        }
+
+
+
+        // var listItems = document.querySelectorAll("ul li");
+        // listItems.forEach(function (item) {
+        //     item.onclick = function (e) {
+        //         document.getElementById('output').innerText = this.innerText;
+        //     }
+        // });
+
+
+
+        // var x = 0;
+        // while (x < 5) {
+        //     document.write(x + "<br />");
+        //     x++;
+        // }
+
+        // document.write("<br />");
+
+        // var y = 0;
+        // while (true) {
+        //     if (y == 3)
+        //         break;
+        //     document.write(y + "<br />");
+        //     y++;
+        // }
+
+
+
+    </script>
+</body>
+
+</html>

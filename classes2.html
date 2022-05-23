@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+
+    <p id="myData"></p>
+
+    <script>
+
+
+
+        class Student {
+            constructor(name, email, age, cls) {
+                this.name = name;
+                this.email = email;
+                this.age = age;
+                this.cls = cls;
+            }
+            bioData() {
+                return (`${this.name} ${this.email} ${this.age} ${this.cls}`);
+            }
+        }
+
+        class Player extends Student {
+            constructor(name, email, age, cls, game) {
+                super(name, email, age, cls);
+                this.game = game;
+            }
+            playerBioData() {
+                return (`${super.bioData()}. ${this.game}`);
+            }
+        }
+
+
+        let Obj1 = new Player('muhammad waqas', 'm.waqas@avanzasolutions.com', 30, 'MBA', 'Football');
+        console.log(Obj1.playerBioData());
+
+
+        document.getElementById('myData').innerHTML = Obj1.playerBioData();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

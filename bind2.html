@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+
+        function Student(firstName, lastName, email) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.email = email;
+        }
+
+        var myFunc = function (cellNo, address) {
+            console.log(this.firstName + " " + this.lastName + " " + this.email + " " + cellNo + " " + address);
+        }
+
+        let student1 = new Student('muhammad', 'waqas', 'm.waqas@avanzasolutions.com');
+
+        myFunc.call(student1, "03222946642", "east");
+        myFunc.apply(student1, ["03358523691", "south"]);
+
+        let bindFunc = myFunc.bind(student1, "03338523691", "west");
+        bindFunc();
+
+
+    </script>
+</body>
+
+</html>

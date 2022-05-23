@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="checkbox">
+        <label><input type="checkbox" class="chkBox" rel="apple" />Apple</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" class="chkBox" rel="samsung" />Samsung</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" class="chkBox" rel="xiaomi" />Xiaomi</label>
+    </div>
+
+    <div>
+        <p class="t1">test</p>
+        <p class="t1">test</p>
+        <p class="t1">test</p>
+        <p class="t1">test</p>
+        <p class="t1">test</p>
+        <p class="t1">test</p>
+        <p class="t1">test</p>
+        <p class="t1">test</p>
+        <p class="t1">test</p>
+        <p class="t1">test</p>
+        <p class="t1">test</p>
+        <p class="t1">test</p>
+    </div>
+
+
+    <div id="getData1"></div>
+    <div id="getDcodeNo"></div>
+    <div id="getNumber"></div>
+
+    <script>
+
+        var array = [1, 2, 3, 4, 1, 7, 8, 9, 1];
+
+        function findMinimumIndexes(array) {
+            var min = Math.min.apply(Math, array);
+            var indexes = [];
+
+            array.forEach(function (item, idx, arr) {
+                if (item === min) {
+                    indexes.push(idx);
+                }
+            });
+
+            return indexes;
+        }
+
+        console.log(findMinimumIndexes(array));
+
+
+        ////////////////////////////////////////////////////////////
+
+        // count repeated numbers
+        const sampleArray = [1, 2, 2, 2, 3, 3, 6, 6, 6, 6, 7, 7];
+        const counts = {};
+        sampleArray.forEach(
+            function (x) {
+                counts[x] = (counts[x] || 0) + 1;
+            });
+        console.log(counts)
+
+
+        // https://stackoverflow.com/questions/19395257/how-to-count-duplicate-value-in-an-array-in-javascript
+
+
+        const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+        const result = words.filter(word => word.length < 6);
+        console.log(result);
+
+
+        var countP = document.querySelectorAll('.t1');
+        for (let i = 0; i < countP.length; i++) {
+            var getCount = countP;
+
+        }
+        console.log(getCount);
+
+
+
+        var checks = document.querySelectorAll('.chkBox');
+
+        checks.forEach(function (check) {
+            check.addEventListener('click', checkIndex);
+        })
+
+        function checkIndex(event) {
+            console.log(Array.from(checks).indexOf(event.target));
+        }
+
+
+
+        var geTname = 'waqas';
+        for (let i = 0; i < 4; i++) {
+            console.log(geTname);
+        }
+
+
+
+        for (let i = 1; i <= 4; i++) {
+            for (let x = 1; x <= 4; x++) {
+                document.write(i);
+            }
+            document.write("<br />");
+        }
+
+        document.write("<br />");
+
+        var xyz = document.querySelectorAll('.pt1');
+        for (let i = 1; i <= 10; i++) {
+            for (let x = 1; x <= i; x++) {
+                document.write(i);
+            }
+            document.write("<br />");
+        }
+
+        document.write("<br />");
+
+
+
+        for (let a = 1; a <= 10; a++) {
+            for (let b = 1; b <= a; b++) {
+                document.write('*');
+            }
+            document.write("<br />");
+        }
+
+        document.write("<br />");
+
+
+        var number = 2;
+        for (let c = 1; c <= 10; c++) {
+
+            const result = c * number;
+            document.write(`${number} * ${c} = ${result}`);
+            document.write("<br />");
+        }
+
+        document.write("<br />");
+
+
+
+
+        var data1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+
+        for (let z = 0; z < data1.length; z++) {
+            if (z % 3 === 0) {
+                document.write("<br />");
+            }
+            var getData = z;
+            document.write(` ${getData} `);
+        }
+
+
+        var val = data1;
+        document.getElementById("getData1").innerHTML = val.join(" ");
+
+
+        document.write("<br />");
+        document.write("<br />");
+
+
+
+
+        var nameV = "waqas";
+        if (nameV.length > 3) {
+            document.write("true");
+        }
+        else {
+            document.write("false");
+        }
+
+        document.write("<br />");
+        document.write("<br />");
+
+
+
+        // var j = 123456;
+        // var x = Integer.toString(j);
+        // x = x.substring(0, 4) + "." + x.substring(4, x.length);
+
+
+        //  dash add in number 
+        var str = "1234567891011121";
+        var parts = str.match(/.{1,4}/g);
+        var new_value = parts.join("-"); //returns 123-456-789
+        console.log(new_value);
+
+
+
+        //  add coma string 
+        var myString = "junaid khan";
+        var array = myString.split(' ').slice(0, 3).join(',');
+        console.log(array);
+
+
+        // add number coma 
+        var numbers = 5000;
+        console.log(numbers.toLocaleString());
+
+        // add number dot
+        var num = 10000;
+        console.log(num.toFixed(2));
+
+        // data replace 
+        var nameLL = '12-25-62';
+        var resnameLL = nameLL.replace(/-/g, ":");
+        console.log(resnameLL);
+
+
+        // get vowel word in string
+        let arrAlpha = 'saad elephant usman';
+        let pattern = /[a,e,i,o,u]/g;
+        let ress = arrAlpha.match(pattern);
+        var ressSort = new Set(ress);
+        console.log(ressSort);
+
+        // get vowel word in array
+        var vowelArr = ['a', 's', 'e', 'z', 'i', 't', 'o', 'n', 'q', 'u', 'k'];
+        let vowelArrRes = vowelArr.toString().replace(/,/g, " ");
+        let patrn = /[a,e,i,o,u]/g;
+        let vowelArrFinal = vowelArrRes.match(patrn);
+        var vowelArrFinalSort = new Set(vowelArrFinal);
+        console.log('final vowel words', vowelArrFinalSort);
+
+        // number sum 
+        function smnNo(...a) {
+            let smnNoREs = 0;
+            a.forEach(num => {
+                smnNoREs += num;
+            })
+            console.log('number sum is...', smnNoREs);
+        }
+        smnNo(2, 4, 6);
+
+
+        // fiend even number in array list
+        let finedEvenNo = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        function sumEvens(finedEvenNo) {
+            let resEvenNo = 0;
+            for (let i = 0; i < finedEvenNo.length; i++) {
+                if (i % 2 === 0) {
+                    console.log('this is even no...', i);
+                    resEvenNo = resEvenNo + finedEvenNo[i];
+                }
+            }
+            return resEvenNo;
+        }
+        console.log(sumEvens(finedEvenNo));
+
+
+
+
+        // card center number convert in stars and gaps 
+        // var cardNumber = '1234567891234560';
+        // var arr = [];
+        // for (var i = 0; i < cardNumber.length; i++) {
+        //     if (i > 3 && i < 12) arr.push('*')
+        //     else arr.push(cardNumber[i]);
+        //     if ((i + 1) % 4 == 0) arr.push(" ");
+        // }
+        // cardNumber = arr.join().replaceAll(',', '')
+        // console.log(cardNumber);
+
+
+
+
+
+
+        cardNo = (cardNumber) => {
+            let arr = [];
+            for (let i = 0; i < cardNumber.length; i++) {
+                if (i > 3 && i < 12) arr.push('*');
+                else arr.push(cardNumber[i]);
+                if ((i + 1) % 4 == 0) arr.push(" ");
+            }
+            return arr.join().replaceAll(',', '');
+        }
+
+        var getvval = '1234567891234560';
+        console.log(cardNo(getvval));
+        // document.getElementById('getNumber').innerHTML = window.cardNo('1234567891234560');
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

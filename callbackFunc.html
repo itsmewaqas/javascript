@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+
+        function show() {
+            console.log("call callback function show");
+        }
+
+        function geeky(callback) {
+            callback();
+        }
+
+        geeky(show);
+
+
+
+        function show2(a) {
+            console.log("call callback function show2",a);
+        }
+
+        function geeky2(callback) {
+            var a = 101;
+            callback(a);
+        }
+
+        geeky2(show2);
+
+
+    </script>
+</body>
+
+</html>

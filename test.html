@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+function sayHi() {
+  console.log(name);
+  console.log(age);
+  var name = 'Lydia';
+  let age = 21;
+}
+
+
+
+
+
+
+
+const shape = {
+  radius: 10,
+  diameter() {
+    return this.radius * 2;
+  },
+  perimeter: () => 2 * Math.PI * this.radius,
+};
+
+console.log(shape.diameter());
+console.log(shape.perimeter());
+
+
+
+
+
+
+
+
+
+class Chameleon {
+  static colorChange(newColor) {
+    this.newColor = newColor;
+    return this.newColor;
+  }
+
+  constructor({ newColor = 'green' } = {}) {
+    this.newColor = newColor;
+  }
+}
+
+const freddie = new Chameleon({ newColor: 'purple' });
+console.log(freddie.colorChange('orange'));
+
+
+
+
+let number = 0;
+console.log(number++);
+console.log(++number);
+console.log(number);
+
+
+
+
+
+function checkAge(data) {
+  if (data === { age: 18 }) {
+    console.log('You are an adult!');
+  } else if (data == { age: 18 }) {
+    console.log('You are still an adult.');
+  } else {
+    console.log(`Hmm.. You don't have an age I guess`);
+  }
+}
+
+
+
+
+
+
+function getAge(...args) {
+  console.log(typeof args);
+}
+
+
+
+
+
+
+
+
+[[0, 1], [2, 3]].reduce(
+  (acc, cur) => {
+    return acc.concat(cur);
+  },
+  [1, 2],
+);
+
+
+
+
+
+
+
+
+const firstPromise = new Promise((res, rej) => {
+  setTimeout(res, 500, 'one');
+});
+
+const secondPromise = new Promise((res, rej) => {
+  setTimeout(res, 100, 'two');
+});
+
+Promise.race([firstPromise, secondPromise]).then(res => console.log(res));
+
+
+
+
+
+
+
+
+const myPromise = Promise.resolve(Promise.resolve('Promise!'));
+
+function funcOne() {
+  myPromise.then(res => res).then(res => console.log(res));
+  setTimeout(() => console.log('Timeout!'), 0);
+  console.log('Last line!');
+}
+
+async function funcTwo() {
+  const res = await myPromise;
+  console.log(await res);
+  setTimeout(() => console.log('Timeout!'), 0);
+  console.log('Last line!');
+}
+
+funcOne();
+funcTwo();
+
+
+
+
+
+
+
+
+
+    </script>
+    <p>Have the function CountingMinutes(str) take the str parameter being passed which will be two times (each properly formatted with a colon and am or pm) separated by a hyphen and return the total number of minutes between the two times. The time will be in a 12 hour clock format. For example: if str is 9:00am-10:00am then the output should be 60. If str is 1:00pm-11:00am the output should be 1320.</p>
+<p>
+    Examples
+Input: "12:30pm-12:00am"
+Output: 690
+Input: "1:23am-1:08am"
+Output: 1425
+</p>
+
+</body>
+
+</html>

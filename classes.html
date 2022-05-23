@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+
+        class Employee {
+            constructor(id, name, email) {
+                this.id = id;
+                this.name = name;
+                this.email = email;
+            }
+            login = () => {
+                console.log("this is user info: " + this.id + " " + this.name + " " + this.email);
+            }
+            static printDateTime() {
+                console.log(new Date());
+            }
+        }
+
+        class Developer extends Employee {
+            constructor(id, name, email) {
+                super(id, name, email);
+                // this.name = "junaid";
+            }
+            signup = () => {
+                console.log("this is signup info: " + this.id + " " + this.name + " " + this.email);
+            }
+        }
+
+
+
+        let empObj = new Employee(1, 'muhammad waqas', 'm.waqas@avanzasolutions.com');
+        empObj.login();
+
+        Employee.printDateTime();
+
+        let devObj = new Developer(2, 'hammad khan', 'hammad.khan@avanzasolutions.com');
+        devObj.signup();
+
+        // console.log(empObj);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+
+    <div id="name"></div>
+
+    <script>
+
+        let data = new Promise((success, failure) => {
+            setTimeout(() => {
+                success("call this is success");
+                // failure("some error...");
+            }, 2000);
+        })
+
+        data.then((item) => {
+            console.log(item);
+        }).catch((err) => {
+            console.log(err);
+        })
+
+
+        // let data1 = fetch("https://jsonplaceholder.typicode.com/users");
+        // let data1 = fetch("https://60815a8e73292b0017cdd5af.mockapi.io/api/v1/users/5");
+        let data1 = fetch("https://60815a8e73292b0017cdd5af.mockapi.io/api/v1/users");
+        data1.then((items) => {
+            return items.json()
+        }).then((result) => {
+            console.log("second data", result);
+            // console.log("get name", result[5].name);
+                document.getElementById("name").innerHTML = result[0].name;
+        })
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+
+        var arr = [10, 20, 30, 40, 50];
+        var newArr = arr.map(function (value, index, arr) {
+            value++;
+            return value;
+
+        })
+        console.log(arr);
+        console.log(newArr);
+
+
+        var arr2 = [
+            { price: "100", product: "mobile" },
+            { price: "200", product: "laptop" },
+            { price: "300", product: "mic" },
+            { price: "400", product: "pc" },
+        ];
+
+        var newArr2 = arr2.map((value, index, arr) => {
+            return value.price;
+        })
+        console.log(newArr2);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+  <script>
+    //  function expression
+    var myfun1 = function myfuncall() {
+      document.write("call myfun1");
+    };
+    myfun1();
+
+    document.write("<br />");
+
+    // anonymous function
+    var myfun2 = function () {
+      document.write("call myfun2");
+    };
+    myfun2();
+
+    document.write("<br />");
+
+    // arrow function
+    var myfun = () => {
+      document.write("call myfun");
+    }
+    myfun();
+
+    document.write("<br />");
+
+    // arrow function with parameter
+    var arroFunc = (a, b) => {
+      return a + b;
+    }
+    document.write(arroFunc(10, 20) + " arrow function with parameter");
+
+    document.write("<br />");
+
+
+    // arrow function with rest parameter
+    var arroFunc2 = (c, ...args) => {
+      document.write(c + " " + args);
+    }
+    arroFunc2(10, 20, 30, 40);
+
+    document.write("<br />");
+
+
+
+
+    // arrow function
+    var addFunc = (a, b) => a + b;
+    document.write(addFunc(50, 70));
+
+    document.write("<br />");
+
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+
+        async function mainFunc() {
+            try {
+                console.log("main function call...");
+                let response = await func1();
+                console.log(response);
+                func2();
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+
+
+        function func1() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("func1 call...");
+                    resolve('success');
+                    // reject('reject');
+                }, 1000);
+            })
+        }
+
+        function func2() {
+            console.log("func2 call...");
+        }
+
+
+        console.log(mainFunc());
+
+    </script>
+</body>
+
+</html>

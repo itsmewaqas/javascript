@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+
+        var studentArray = ["waqas", "ali", "zeeshan", "saad", "waseem", "fahad"];
+        document.write(studentArray + "<br />");
+        document.write(typeof (studentArray));
+
+        document.write("<br />");
+        document.write("<br />");
+
+        for (var i = 0; i < studentArray.length; i++) {
+            document.write(studentArray[i] + "<br />");
+        }
+
+        document.write("<br />");
+        document.write("<br />");
+
+
+        var userArray = ["waqas", "ali", "zeeshan", "saad", "waseem", "fahad"];
+        // userArray.splice(1,3);
+         // userArray.splice(2,0);
+        userArray.splice(3, 0, "ahsan", "junaid");
+        document.write(userArray + "<br />");
+
+
+        document.write("<br />");
+        document.write("<br />");
+
+
+        var businessUsers = ["waqas", "ali", "zeeshan", "saad", "waseem", "fahad"];
+        // var showIndex = businessUsers.indexOf("ali" , 2);
+        var showIndex = businessUsers.indexOf("ali");
+        document.write(showIndex);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            display: block;
+            margin: 10px 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            line-height: 14px;
+        }
+
+        .chkBoxActive {
+            border: red solid 2px;
+        }
+
+        .chkBoxRemove {
+            border: #ccc solid 2px;
+        }
+
+        .selLeb {
+            float: left;
+            min-width: 75px;
+            margin: 0px 10px 10px 0px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="step1">
+        <form action="" name="" method="">
+            <label for="">First Name</label>
+            <input type="text" id="ufName" value="" />
+            <div id="nErr" style="color: red;"></div>
+            <label for="">Last Name</label>
+            <input type="text" id="uLname" value="" />
+            <div id="lErr" style="color: red;"></div>
+            <label for="">Email</label>
+            <input type="text" id="uemail" value="" />
+            <div id="eErr" style="color: red;"></div>
+            <label for="">Password</label>
+            <input type="password" id="password" value="" />
+            <div id="passErr" style="color: red;"></div>
+            <label for="">Confirm Password</label>
+            <input type="password" id="confirmPassword" value="" />
+            <div id="conpassErr" style="color: red;"></div>
+            <div id="passMatchErr" style="color: red;"></div>
+            <label for="">Cell</label>
+            <input type="text" id="ucell" value="" />
+            <div id="cErr" style="color: red;"></div>
+            <label for="">Select Country</label>
+            <select id="ctry">
+                <option value="">Select a Country</option>
+                <option value="pakistan">Pakistan</option>
+                <option value="india">India</option>
+                <option value="germany">Germany</option>
+                <option value="us">US</option>
+                <option value="uk">UK</option>
+                <option value="canada">Canada</option>
+                <option value="austrial">Austrial</option>
+            </select>
+            <div id="ctrErr" style="color: red;"></div>
+            <div>
+                <label for="">Select Gender</label>
+                male<input type="radio" id="male" name="a" value="male" />
+                female<input type="radio" id="female" name="a" value="female" />
+                <br />
+                <div id="selGenErr" style="color: red;"></div>
+            </div>
+            <div style="clear: both;display: block;overflow: auto;">
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="getVal"
+                        value="Branding &amp; Visual Identity">Branding &amp; VisualIdentity</label>
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="getVal" value="UI UX Design">UI
+                    UXDesign</label>
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="getVal"
+                        value="Mobile App">MobileApp</label>
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="getVal"
+                        value="Website Design &amp; Development">Website Design &amp; Development</label>
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="getVal" value="CRM, CMS, Web Apps">CRM,
+                    CMS,
+                    WebApps</label>
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="getVal"
+                        value="Design Audit Consultancy">Design Audit Consultancy</label>
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="getVal"
+                        value="Strategy &amp; Design">Strategy
+                    &amp;Design</label>
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="getVal"
+                        value="Illustrations (Vectorized, 3D &amp; more)">Illustrations (Vectorized, 3D &amp;
+                    more)</label>
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="getVal"
+                        value="Animation &amp; Motion Design">Animation &amp;Motion Design</label>
+                <label class="chkBoxRemove selLeb"><input type="checkbox" class="getVal"
+                        value="E-commerce &amp; Shopify">E-commerce &amp;Shopify</label>
+            </div>
+            <div id="indErr" style="color: red;"></div>
+            <br />
+            <input type="button" onclick="myFunction()" value="Submit">
+        </form>
+    </div>
+    <div id="step2">
+        Thank for given your query successfully submitted... :)
+    </div>
+    </div>
+
+    <script src="crypto-js.min.js"></script>
+    <script>
+
+        // var labelsActive = document.querySelectorAll(".chkBoxRemove");
+        var labelsActive = document.querySelectorAll("label");
+        for (let i = 0; i < labelsActive.length; i++) {
+            labelsActive[i].onchange = function () {
+                if (labelsActive[i].classList.contains('chkBoxRemove')) {
+                    labelsActive[i].classList.remove('chkBoxRemove')
+                    labelsActive[i].classList.add('chkBoxActive')
+                } else {
+                    labelsActive[i].classList.add('chkBoxRemove')
+                    labelsActive[i].classList.remove('chkBoxActive')
+                }
+            }
+        }
+        // console.log(labelsActive);
+
+
+        document.getElementById("step1").style.display = "block";
+        document.getElementById("step2").style.display = "none";
+
+        function myFunction(ufName, uLname, uemail, ucell, ctry, setGender, checkBoxesCount, password, confirmPassword) {
+
+            var ufName = document.getElementById("ufName").value;
+            var uLname = document.getElementById("uLname").value;
+            var uemail = document.getElementById("uemail").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var ucell = document.getElementById("ucell").value;
+            var ctry = document.getElementById("ctry").value;
+
+            if (ufName == undefined || ufName == "" || ufName.length <= 5) {
+                let nErr = document.getElementById("nErr").innerHTML = "enter valid name above 5 character";
+            }
+            else {
+                let nErr = document.getElementById("nErr").innerHTML = " ";
+            }
+
+
+            if (uLname == undefined || uLname == "" || uLname.length <= 5) {
+                let lErr = document.getElementById("lErr").innerHTML = "enter l name above 5 character";
+            }
+
+            else {
+                let lErr = document.getElementById("lErr").innerHTML = " ";
+            }
+
+            var emailRgx = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if (uemail == undefined || uemail == "" || !emailRgx.test(uemail)) {
+                let eErr = document.getElementById("eErr").innerHTML = "enter valid email address";
+            }
+
+            else {
+                let eErr = document.getElementById("eErr").innerHTML = " ";
+            }
+
+            var cellRgx = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+            if (ucell == undefined || ucell == "" || (cellRgx.test(ucell) == false)) {
+                let cErr = document.getElementById("cErr").innerHTML = "enter valid cell number";
+            }
+
+            else {
+                let cErr = document.getElementById("cErr").innerHTML = " ";
+            }
+
+            if (password == undefined || password == "") {
+                let passErr = document.getElementById("passErr").innerHTML = "please enter password";
+            }
+
+            else {
+                let passErr = document.getElementById("passErr").innerHTML = " ";
+            }
+
+
+            if (confirmPassword == undefined || confirmPassword == "") {
+                let conpassErr = document.getElementById("conpassErr").innerHTML = "please enter confirm password";
+            }
+
+            else {
+                let conpassErr = document.getElementById("conpassErr").innerHTML = " ";
+            }
+
+
+            if (password != confirmPassword) {
+                let passMatchErr = document.getElementById("passMatchErr").innerHTML = "your password does not match again enter correct password";
+            }
+            else {
+                let passMatchErr = document.getElementById("passMatchErr").innerHTML = "";
+            }
+
+            if (ctry == undefined || ctry == "") {
+                let ctrErr = document.getElementById("ctrErr").innerHTML = "please select country";
+            }
+
+            else {
+                let ctrErr = document.getElementById("ctrErr").innerHTML = " ";
+            }
+
+            // var abc = 10;
+            // var xyz = abc == '10' ? "true" : "false";
+            // console.log('get',xyz);
+
+            var setGender;
+            var selGenErr;
+            if (document.getElementById('male').checked) {
+                setGender = document.getElementById('male').value;
+                selGenErr = document.getElementById("selGenErr").innerHTML = " ";
+            }
+            else if (document.getElementById('female').checked) {
+                setGender = document.getElementById('female').value;
+                selGenErr = document.getElementById("selGenErr").innerHTML = " ";
+            }
+            else {
+                selGenErr = document.getElementById("selGenErr").innerHTML = "please select Gender";
+            }
+
+            var getCheckedVal = [];
+            var checkBoxesCount = document.getElementsByClassName("getVal");
+            for (var i = 0; i < checkBoxesCount.length; i++) {
+                if (checkBoxesCount[i].checked) {
+                    getCheckedVal.push(checkBoxesCount[i].value);
+                }
+            }
+            if (getCheckedVal.length == 0) {
+                indErr = document.getElementById("indErr").innerHTML = "please select Industry";
+            }
+            else {
+                indErr = document.getElementById("indErr").innerHTML = "";
+            }
+
+            if (ufName != ''
+                && uLname != ''
+                && uemail != ''
+                && password != ''
+                && confirmPassword != ''
+                && ucell != ''
+                && ctry != ''
+                && setGender != ''
+                && getCheckedVal != '') {
+                var ufName = ufName;
+                var uLname = uLname;
+                var uemail = uemail;
+                var password = password;
+                var confirmPassword = confirmPassword;
+                var ucell = ucell;
+                var ctry = ctry;
+                var setGender = setGender;
+                var getCheckedVal = getCheckedVal;
+
+                var key = "";
+                var passwordEncrypt = CryptoJS.AES.encrypt(password, key);
+                passwordEncrypt = passwordEncrypt.toString();
+
+                var confirmPasswordEncrypt = CryptoJS.AES.encrypt(confirmPassword, key);
+                confirmPasswordEncrypt = confirmPasswordEncrypt.toString();
+
+                console.log('get user details...',
+                    [ufName,
+                        uLname,
+                        uemail,
+                        passwordEncrypt,
+                        confirmPasswordEncrypt,
+                        ucell,
+                        ctry,
+                        setGender,
+                        getCheckedVal]);
+
+                        document.getElementById("step1").style.display = "none";
+                        document.getElementById("step2").style.display = "block";
+            }
+            else {
+                return false
+            }
+        }
+
+                    // var key = "";
+                    // var passwordDecrypt = CryptoJS.AES.decrypt(password, key);
+                    // passwordDecrypt = passwordDecrypt.toString(CryptoJS.enc.Utf8);
+                    // console.log('pd', passwordDecrypt);
+
+                    // var key = "";
+                    // var cipher = CryptoJS.AES.encrypt("W@qas786", key);
+                    // cipher = cipher.toString();
+                    // console.log(cipher);
+
+                    // var decipher = CryptoJS.AES.decrypt(cipher, key);
+                    // decipher = decipher.toString(CryptoJS.enc.Utf8);
+                    // console.log(decipher);
+
+    </script>
+</body>
+
+</html>
